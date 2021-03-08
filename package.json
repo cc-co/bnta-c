@@ -1,0 +1,26 @@
+{
+  "name": "bnta-c",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^4.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc ./index.ts",
+    "run": "node ./index.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cc-co/bnta-c.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cc-co/bnta-c/issues"
+  },
+  "homepage": "https://github.com/cc-co/bnta-c#readme"
+}
