@@ -1,20 +1,14 @@
 import * as Enemy from './Enemy.js';
-import * as chalk from 'chalk'
-
-
+import * as chalk from 'chalk';
 // ES6 Syntax
 export class Cyclops extends Enemy {
-    type: string;
-    sprite: string;
-
-    constructor(name:string, weapon:string) {
+    constructor(name, weapon) {
         // Call parent constructor here:
         super(name, weapon);
-        
         this.armor = 'Golem Armor';
         this.type = 'Earth';
         this.item = null;
-        this.sprite =`
+        this.sprite = `
 .............:===**+++++=::........
 ...........:+++*****#*==+=++:......
 .......  ..+*++*+**#${chalk.red('@')}*=++==*=......
@@ -34,3 +28,4 @@ export class Cyclops extends Enemy {
 .............+*****..:=+==:........ `;
     }
 }
+//# sourceMappingURL=Cyclops.js.map

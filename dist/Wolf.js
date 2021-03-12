@@ -1,20 +1,10 @@
-import {Enemy} from './Enemy.js';
+import { Enemy } from './Enemy.js';
 import * as chalk from 'chalk';
-import { TemplateLiteral } from 'typescript';
-
-
 // ES6 Syntax
 export class Wolf extends Enemy {
-        armor: string;
-        type: string;
-        weapon: string; 
-        sprite: string; //template literal
-        item: string;
-
-    constructor(name:string, weapon:string) {
+    constructor(name, weapon) {
         // Call parent constructor here:
         super(name, weapon);
-        j
         this.armor = 'Fur';
         this.type = 'Earth';
         this.item = null;
@@ -34,5 +24,5 @@ export class Wolf extends Enemy {
 :#@@%=:::::-*@%#*-##+-:=-:::::+##**-:
 :-=-=-:::::::-=--+@%*=::::::::::---:: `;
     }
-
 }
+//# sourceMappingURL=Wolf.js.map

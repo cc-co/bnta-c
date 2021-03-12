@@ -1,4 +1,4 @@
-import * as chalk from 'chalk' //bit different to es6
+import chalk from 'chalk' //bit different to es6
 
 export class Character {
     name: string;

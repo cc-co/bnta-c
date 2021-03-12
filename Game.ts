@@ -1,4 +1,4 @@
-import inquirer from 'inquirer';
+import inquirer from "inquirer";
 import {Player} from './Player.js';
 import * as _ from 'lodash';
 import { Cyclops } from './Cyclops.js';
@@ -66,9 +66,9 @@ export class Game {
         this.enemies.push(new Snake('serpent', 'fang'));
         this.enemies.push(new Cyclops('skeletocyclops', 'axe'));
         // randomise order of enemies
-        let shuffledEnemies = _.shuffle(this.enemies);
-        this.resetIndexEnemies = shuffledEnemies.filter(function(){return true;});
-        this.currentEnemy = this.resetIndexEnemies[0];
+        let shuffledEnemies = _.shuffle(this.enemies); //_.shuffle shuffles index as well
+        this.resetIndexEnemies = shuffledEnemies.filter(function(){return true;}); //resetting the index to shuffled elements
+        this.currentEnemy = this.resetIndexEnemies[0]; 
 
         // asks player to play the game with the terminal expanded fully
         console.log(chalk.cyan("NOTE: This game is best played with the terminal expanded to a full window!"))

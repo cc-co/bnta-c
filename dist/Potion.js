@@ -1,10 +1,7 @@
-"use strict";
-exports.__esModule = true;
-exports.Potion = void 0;
-var Potion = /** @class */ (function () {
-    function Potion(name) {
+export class Potion {
+    constructor(name) {
         this.types = ['strength', 'agility', 'health', 'super-health'];
-        this.name = name || this.types[Math.floor(Math.random() * this.types.length)];
+        this.name = name || this.types[Math.floor(Math.random() * this.types.length)]; //unspecified potion -> random potion
         if (this.name === ['health']) {
             this.value = Math.floor(Math.random() * 15 + 30);
         }
@@ -15,6 +12,5 @@ var Potion = /** @class */ (function () {
             this.value = Math.floor(Math.random() * 15 + 7);
         }
     }
-    return Potion;
-}());
-exports.Potion = Potion;
+}
+//# sourceMappingURL=Potion.js.map

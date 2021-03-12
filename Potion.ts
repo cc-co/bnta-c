@@ -4,7 +4,7 @@ export class Potion {
     value: number;
     constructor(name?) { //not sure on variable of name//
         this.types = ['strength', 'agility', 'health','super-health'];
-        this.name = name || this.types[Math.floor(Math.random() * this.types.length)];
+        this.name = name || this.types[Math.floor(Math.random() * this.types.length)]; //unspecified potion -> random potion
 
         if (this.name === ['health']) {
             this.value = Math.floor(Math.random() * 15 + 30);
