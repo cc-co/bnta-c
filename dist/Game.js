@@ -1,10 +1,10 @@
 import inquirer from 'inquirer';
 import { Player } from './Player.js';
-import * as _ from 'lodash';
+import _ from 'lodash';
 import { Cyclops } from './Cyclops.js';
 import { Snake } from './Serpent.js';
 import { Wolf } from './Wolf.js';
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 // Countdown timer for in-game decisions
 export class Timer {
     constructor(timeLimit) {
@@ -56,7 +56,7 @@ export class Game {
         // prompts the player for their name and narrates the story
         inquirer
             .prompt({
-            type: 'text',
+            type: 'input',
             name: 'name',
             message: 'Please tell us your name young squire ... so we can remember you, should you succumb to the fate that awaits you.\n'
         })
@@ -137,7 +137,7 @@ export class Game {
     }
     // Starts a new battle upon entering the correct door or when an enemy is defeated
     startNewBattle() {
-        if (this.player.agility > this.currentEnemy[0].agility) {
+        if (this.player.agility > this.currentEnemy.agility) {
             this.isPlayerTurn = true;
         }
         else {
@@ -167,7 +167,7 @@ export class Game {
                 .then(({ action }) => {
                 if (action === 'Use Revive💕') {
                     // No potions to use
-                    if (!this.player.getInventory()) {
+                    if (this.player.inventory.length <= 0) {
                         console.log("You don't have any Beyonces (revive) to the left, to the left!");
                         return this.checkEndOfBattle();
                     }

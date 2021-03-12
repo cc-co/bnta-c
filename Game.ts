@@ -1,17 +1,17 @@
-import inquirer from "inquirer";
+import inquirer from 'inquirer';
 import {Player} from './Player.js';
-import * as _ from 'lodash';
+import _ from 'lodash';
 import { Cyclops } from './Cyclops.js';
 import { Snake } from './Serpent.js';
 import { Wolf } from './Wolf.js';
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 import { Enemy } from './Enemy.js';
 
 
 // Countdown timer for in-game decisions
 export class Timer {
     timeLimit: number;
-    currentTimeLeft: number;
+    currentTimeLeft!: number;
     constructor(timeLimit: number) {
         this.timeLimit = timeLimit;
         this.currentTimeLeft;
@@ -36,14 +36,15 @@ export class Game {
     battleNumber: number;
     isPlayerTurn: boolean;
     enemies: Array<Wolf|Cyclops|Snake>; //not sure
-    currentEnemy: Wolf|Cyclops|Snake; //not sure
-    player: Player; //not sure
+    currentEnemy!: Wolf|Cyclops|Snake; //not sure
+    player!: Player; //not sure
+ //not sure
     roundNumber: number;
     timer: Timer;
     gamesPlayed: number;
     gamesWon: number;
     gamesLost: number;
-    resetIndexEnemies: Array<Wolf|Cyclops|Snake>;
+    resetIndexEnemies!: Array<Wolf | Cyclops | Snake>;
     constructor() {
         this.battleNumber = 0;
         this.isPlayerTurn = false;
@@ -76,7 +77,7 @@ export class Game {
         // prompts the player for their name and narrates the story
         inquirer
             .prompt({
-                type: 'text',
+                type: 'input',
                 name: 'name',
                 message: 'Please tell us your name young squire ... so we can remember you, should you succumb to the fate that awaits you.\n'
             })
@@ -160,7 +161,7 @@ export class Game {
     
     // Starts a new battle upon entering the correct door or when an enemy is defeated
     startNewBattle() {       
-        if (this.player.agility > this.currentEnemy[0].agility) {
+        if (this.player.agility > this.currentEnemy.agility) {
             this.isPlayerTurn = true;
         }  else {
             this.isPlayerTurn = false;
@@ -189,7 +190,7 @@ export class Game {
                 .then(({ action }) => {
                     if (action === 'Use Revive💕') {
                         // No potions to use
-                        if (!this.player.getInventory()) {
+                        if (this.player.inventory.length <= 0) {
                             console.log("You don't have any Beyonces (revive) to the left, to the left!");
                             return this.checkEndOfBattle();
                         }

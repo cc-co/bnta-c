@@ -6,8 +6,8 @@ export class Character {
     strength: number;
     agility: number;
     status: string;
-    armor: string; //not sure//
-    item: string;
+    armor!: string; //not sure//
+    item!: string;
 
     constructor(name = '') {
         this.name = name;
@@ -15,7 +15,7 @@ export class Character {
         this.strength = Math.floor(Math.random() * 5 + 7);
         this.agility = Math.floor(Math.random() * 5 + 7);
         this.status = 'Normal status';
-        this.armor = null;
+        this.armor;
     }
 
     isAlive() {

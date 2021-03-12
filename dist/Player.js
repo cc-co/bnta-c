@@ -18,10 +18,7 @@ export class Player extends Character {
         };
     }
     getInventory() {
-        if (this.inventory.length) {
-            return this.inventory;
-        }
-        return false;
+        return this.inventory;
     }
     addRevive(potion) {
         this.inventory.push(potion);
@@ -32,14 +29,14 @@ export class Player extends Character {
         // splice --> ['strength']
         // [0] ---> 'strength'
         switch (potion.name) {
-            case ['agility']:
+            case 'agility':
                 this.agility += potion.value;
                 break;
-            case ['health']:
-            case ['super-health']:
+            case 'health':
+            case 'super-health':
                 this.health += potion.value;
                 break;
-            case ['strength']:
+            case 'strength':
                 this.strength += potion.value;
                 break;
         }

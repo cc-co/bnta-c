@@ -1,5 +1,5 @@
 import {Enemy} from './Enemy.js';
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 import { TemplateLiteral } from 'typescript';
 
 
@@ -7,17 +7,17 @@ import { TemplateLiteral } from 'typescript';
 export class Wolf extends Enemy {
         armor: string;
         type: string;
-        weapon: string; 
+        weapon!: string; 
         sprite: string; //template literal
-        item: string;
+        item!: string;
 
     constructor(name:string, weapon:string) {
         // Call parent constructor here:
         super(name, weapon);
-        j
+
         this.armor = 'Fur';
         this.type = 'Earth';
-        this.item = null;
+        this.item;
         this.sprite = `
 ::::-==-:::::::::::::::::::::::::::::
 :::---+#*-:::::::::::::::::::::::::::

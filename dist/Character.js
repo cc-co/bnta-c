@@ -1,4 +1,4 @@
-import * as chalk from 'chalk'; //bit different to es6
+import chalk from 'chalk'; //bit different to es6
 export class Character {
     constructor(name = '') {
         this.name = name;
@@ -6,7 +6,7 @@ export class Character {
         this.strength = Math.floor(Math.random() * 5 + 7);
         this.agility = Math.floor(Math.random() * 5 + 7);
         this.status = 'Normal status';
-        this.armor = null;
+        this.armor;
     }
     isAlive() {
         if (this.health === 0) {

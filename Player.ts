@@ -4,7 +4,7 @@ import {Potion} from './Potion.js'
 import {Character} from './Character.js'
 
 export class Player extends Character {
-    inventory: Array<Potion>;
+    inventory: Potion[];
     constructor(name = '') {
         // Call parent constructor here:
         super(name);
@@ -23,30 +23,27 @@ export class Player extends Character {
     }
 
     getInventory() {
-        if (this.inventory.length) {
-            return this.inventory
-        }
-        return false;
+        return this.inventory
     }
 
-    addRevive(potion) {
+    addRevive(potion: Potion) {
         this.inventory.push(potion);
     }
 
-    useRevive(index) {
+    useRevive(index: number) {
         const potion = this.inventory.splice(index, 1)[0];
 // ['1','strength']
 // splice --> ['strength']
 // [0] ---> 'strength'
         switch (potion.name) {
-            case ['agility']:
+            case 'agility':
                 this.agility += potion.value;
                 break;
-            case ['health']:
-            case ['super-health']:
+            case 'health':
+            case 'super-health':
                 this.health += potion.value;
                 break;
-            case ['strength']:
+            case 'strength':
                 this.strength += potion.value;
                 break;
         }

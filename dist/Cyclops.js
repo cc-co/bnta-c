@@ -1,5 +1,5 @@
-import * as Enemy from './Enemy.js';
-import * as chalk from 'chalk';
+import { Enemy } from './Enemy.js';
+import chalk from 'chalk';
 // ES6 Syntax
 export class Cyclops extends Enemy {
     constructor(name, weapon) {
@@ -7,7 +7,7 @@ export class Cyclops extends Enemy {
         super(name, weapon);
         this.armor = 'Golem Armor';
         this.type = 'Earth';
-        this.item = null;
+        this.item;
         this.sprite = `
 .............:===**+++++=::........
 ...........:+++*****#*==+=++:......

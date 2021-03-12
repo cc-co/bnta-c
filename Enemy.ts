@@ -3,11 +3,11 @@ import {Character} from './Character.js';
 
 
 export class Enemy extends Character {
-        name: string;
+        name!: string;
         weapon: string;
         potion: Potion;
 
-    constructor(name?, weapon?) {
+    constructor(name: string, weapon: string) {
 
         // Call parent constructor here:
         super(name);

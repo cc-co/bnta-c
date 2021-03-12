@@ -1,5 +1,5 @@
 import { Enemy } from './Enemy.js';
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 // ES6 Syntax
 export class Wolf extends Enemy {
     constructor(name, weapon) {
@@ -7,7 +7,7 @@ export class Wolf extends Enemy {
         super(name, weapon);
         this.armor = 'Fur';
         this.type = 'Earth';
-        this.item = null;
+        this.item;
         this.sprite = `
 ::::-==-:::::::::::::::::::::::::::::
 :::---+#*-:::::::::::::::::::::::::::

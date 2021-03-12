@@ -1,5 +1,5 @@
 import {Enemy} from './Enemy.js'
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 
 
 // ES6 Syntax
